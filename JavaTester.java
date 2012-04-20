@@ -16,9 +16,9 @@ public class JavaTester {
 			try {
 				BufferedReader r = new BufferedReader(new FileReader(files[i]));
 
-				System.out.println("(java)found: " + r.readLine());
+				System.out.println("(java2)found: " + r.readLine());
 			} catch (Exception e) {
-				System.err.println("couldn't read file '" + files[i].getName());
+				System.err.println("(java2)couldn't read file: '" + files[i].getName());
 			}
 		}
 	}

@@ -19,7 +19,7 @@ public class Java7Tester {
                                 System.out.println("(java7)found: " + r.readLine());
 			}
 		} catch (IOException e) {
-			System.err.println("cannot open folder" + e);
+			System.err.println("(java7)cannot open folder: " + e);
 		}
 	}
 }

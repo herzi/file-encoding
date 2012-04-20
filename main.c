@@ -72,7 +72,7 @@ main (int   argc __attribute__((__unused__)),
                         sizeof(buf), sizeof(buf) << 1);
                 return EXIT_FAILURE;
             }
-            write(fileno(stdout), "found: ", strlen("found "));
+            write(fileno(stdout), "(c)found: ", strlen("(c)found: "));
             write(fileno(stdout), buf, len);
             sync();
             if (0 > close(fileDescriptor)) {
