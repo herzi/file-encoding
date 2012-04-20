@@ -1,7 +1,7 @@
-all: tester JavaTester.class
+all: tester JavaTester.class Java7Tester.class
 
 clean:
-	rm -rf tester *.txt *.jar
+	rm -rf tester *.class *.jar *.txt
 
 tester: main.c Makefile
 	gcc -o $@ $< -Wall -Wextra -O2
@@ -11,5 +11,5 @@ jar: all
 	jar -cf myjar.jar *.txt
 	java JavaTester
 
-JavaTester.class: JavaTester.java
-	javac JavaTester.java
+%.class: %.java
+	javac $<
