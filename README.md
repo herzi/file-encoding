@@ -1,7 +1,10 @@
 File-Encoding Tests
 ===================
 
-Example from GNU/Linux:
+Example:
+--------
+
+Running on GNU/Linux:
 
     > make test
     gcc -o c-tester c-tester.c -Wall -Wextra -O2
@@ -25,3 +28,10 @@ Example from GNU/Linux:
     (java7)found: ASCII
     (java7)found: UTF-8
 
+References:
+-----------
+
+ * http://developer.gnome.org/glib/stable/glib-Character-Set-Conversion.html#file-name-encodings
+ * http://mail.gnome.org/archives/desktop-devel-list/2010-July/msg00047.html
+ * http://mail.gnome.org/archives/desktop-devel-list/2010-July/msg00080.html
+ * http://mail.gnome.org/archives/desktop-devel-list/2010-July/msg00074.html
