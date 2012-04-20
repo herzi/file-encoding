@@ -13,3 +13,7 @@ jar: all
 
 %.class: %.java
 	javac $<
+
+test: Java7Tester.class
+	test -f helloe.txt || ./tester
+	java Java7Tester
