@@ -1,20 +1,24 @@
-all: tester JavaTester.class Java7Tester.class
+all: c-tester JavaTester.class Java7Tester.class
 
-%.class: %.java
+%.class: %.java Makefile
 	javac $<
 
 clean:
-	rm -rf tester *.class *.jar *.txt
+	rm -rf generator c-tester *.class *.jar *.txt
 
-tester: main.c Makefile
+c-tester: c-tester.c Makefile
+	gcc -o $@ $< -Wall -Wextra -O2
+
+generator: main.c Makefile
 	gcc -o $@ $< -Wall -Wextra -O2
 
 myjar.jar: stamp-generate
 	jar -cf $@ *.txt
 
-stamp-generate:
-	test -f helloe.txt || ./tester
+stamp-generate: generator
+	test -f helloe.txt || ./$<
 
 test: all stamp-generate
+	./c-tester
 	java JavaTester
 	java Java7Tester
